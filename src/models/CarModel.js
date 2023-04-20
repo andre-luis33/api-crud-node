@@ -8,10 +8,6 @@ const Car = database.define('cars', {
 		autoIncrement: true,
 		allowNull: false,
 	},
-	brand: {
-		type: Sequelize.STRING,
-		allowNull: false,
-	},
 	name: {
 		type: Sequelize.STRING,
 		allowNull: false,
@@ -22,7 +18,7 @@ const Car = database.define('cars', {
 	},
 	color: {
 		type: Sequelize.STRING,
-		allowNull: false,
+		allowNull: true,
 	},
 	licensePlate: {
 		type: Sequelize.STRING,

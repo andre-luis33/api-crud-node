@@ -1,13 +1,11 @@
 const database  = require('./database');
-const CarsModel = require('../models/CarsModel');
-
+const CarModel = require('../models/CarModel');
 
 (async () => {
 
 	await database.sync();
 
 	const car1 = {
-		brand: 'Renault',
 		name: 'Sandero 1.0',
 		year: 2010,
 		color: 'Preto',
@@ -16,7 +14,6 @@ const CarsModel = require('../models/CarsModel');
 	};
 
 	const car2 = {
-		brand: 'Fiat',
 		name: 'Palio 1.0',
 		year: 2011,
 		color: 'Preto',
@@ -24,7 +21,7 @@ const CarsModel = require('../models/CarsModel');
 		price: 17000
 	};
 
-	await CarsModel.create(car1);
-	await CarsModel.create(car2);
+	await CarModel.create(car1);
+	await CarModel.create(car2);
 
 })();
