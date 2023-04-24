@@ -16,6 +16,16 @@ class CarController {
 		return car ? res.json(car) : res.status(404).json({ message: 'Car not found' });
 	}
 
+
+
+	/** @type {import("express").RequestHandler} */
+	async count(req, res) {
+		const count = await CarModel.count();
+		return res.json({count: count});
+	}
+
+
+
 	/** @type {import("express").RequestHandler} */
 	async store(req, res) {
 		const { name, year, color, price, licensePlate } = req.body;
@@ -55,6 +65,7 @@ class CarController {
 		}
 
 	}
+
 
 	/** @type {import("express").RequestHandler} */
 	async update(req, res) {
@@ -109,6 +120,7 @@ class CarController {
 		}
 
 	}
+
 
 	/** @type {import("express").RequestHandler} */
 	async destroy(req, res) {
